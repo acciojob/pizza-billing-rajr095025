@@ -22,31 +22,24 @@ public class Pizza {
         return this.price;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
-    }
 
     public void addExtraCheese(){
-        price += 80;
-        this.bill = Integer.toString(price);
+        this.bill = Integer.toString(Integer.parseInt(this.bill) + 80);
     }
 
     public void addExtraToppings(){
         // your code goes here
         if(this.isVeg == true){
-            price += 70;
-            this.bill = Integer.toString(price);
+            this.bill = Integer.toString(Integer.parseInt(this.bill) + 70);
         }
         else{
-            price += 120;
-            this.bill = Integer.toString(price);
+            this.bill = Integer.toString(Integer.parseInt(this.bill) + 120);
         }
     }
 
     public void addTakeaway(){
         // your cod
-        price += 20;
-        this.bill = Integer.toString(price);
+        this.bill = Integer.toString(Integer.parseInt(this.bill) + 20);
 
     }
 
