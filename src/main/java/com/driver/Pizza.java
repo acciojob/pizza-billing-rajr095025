@@ -6,6 +6,12 @@ public class Pizza {
     private Boolean isVeg;
     private String bill;
 
+    private boolean alreadyCheese = false;
+
+    private boolean alreadyToppings = false;
+
+    private boolean alreadyBag = false;
+
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
         if(isVeg == true){
@@ -24,17 +30,21 @@ public class Pizza {
 
 
     public void addExtraCheese(){
-    	this.price += 80;
+    	if(alreadyCheese == false){
+            this.price += 80;
+            alreadyCheese = true;
+        }
         //this.bill = Integer.toString(Integer.parseInt(this.bill) + 80);
     }
 
     public void addExtraToppings(){
         // your code goes here
-        if(this.isVeg == true){
+        if(this.isVeg == true && alreadyToppings == false){
         	this.price += 70;
+            alreadyToppings = true;
             //this.bill = Integer.toString(Integer.parseInt(this.bill) + 70);      
         }
-        else{
+        else if(alreadyToppings == false){
         	this.price += 120;
             //this.bill = Integer.toString(Integer.parseInt(this.bill) + 120);
         }
@@ -42,7 +52,11 @@ public class Pizza {
 
     public void addTakeaway(){
         // your cod
-    	this.price += 20;
+        if(alreadyBag == false){
+            this.price += 20;
+            alreadyBag = true;
+        }
+
         //this.bill = Integer.toString(Integer.parseInt(this.bill) + 20);
 
     }
