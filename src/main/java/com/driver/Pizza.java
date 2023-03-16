@@ -62,7 +62,7 @@ public class Pizza {
 
     public String getBill(){
         // your code goes here
-    	this.bill = Integer.toString(this.price) + "\n";
+    	this.bill = Integer.toString(this.price);
         return this.bill;
     }
 }
