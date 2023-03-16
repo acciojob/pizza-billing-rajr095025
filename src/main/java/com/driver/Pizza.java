@@ -30,21 +30,21 @@ public class Pizza {
 
 
     public void addExtraCheese(){
-    	if(alreadyCheese == false){
-            this.price += 80;
-            alreadyCheese = true;
-        }
+    	if(alreadyCheese) return;
+        this.price += 80;
+        alreadyCheese = true;
         //this.bill = Integer.toString(Integer.parseInt(this.bill) + 80);
     }
 
     public void addExtraToppings(){
         // your code goes here
-        if(this.isVeg == true && alreadyToppings == false){
+        if(alreadyToppings) return;
+        alreadyToppings = true;
+        if(this.isVeg == true){
         	this.price += 70;
-            alreadyToppings = true;
             //this.bill = Integer.toString(Integer.parseInt(this.bill) + 70);      
         }
-        else if(alreadyToppings == false){
+        else{
         	this.price += 120;
             //this.bill = Integer.toString(Integer.parseInt(this.bill) + 120);
         }
@@ -52,10 +52,9 @@ public class Pizza {
 
     public void addTakeaway(){
         // your cod
-        if(alreadyBag == false){
-            this.price += 20;
-            alreadyBag = true;
-        }
+        if(alreadyBag) return;
+        alreadyBag = true;
+        this.price += 20;
 
         //this.bill = Integer.toString(Integer.parseInt(this.bill) + 20);
 
@@ -63,7 +62,7 @@ public class Pizza {
 
     public String getBill(){
         // your code goes here
-    	this.bill =  "" + this.price;
+    	this.bill = Integer.toString(this.price) + "\n";
         return this.bill;
     }
 }
