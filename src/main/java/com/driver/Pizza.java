@@ -24,27 +24,32 @@ public class Pizza {
 
 
     public void addExtraCheese(){
-        this.bill = Integer.toString(Integer.parseInt(this.bill) + 80);
+    	this.price += 80;
+        //this.bill = Integer.toString(Integer.parseInt(this.bill) + 80);
     }
 
     public void addExtraToppings(){
         // your code goes here
         if(this.isVeg == true){
-            this.bill = Integer.toString(Integer.parseInt(this.bill) + 70);
+        	this.price += 70;
+            //this.bill = Integer.toString(Integer.parseInt(this.bill) + 70);      
         }
         else{
-            this.bill = Integer.toString(Integer.parseInt(this.bill) + 120);
+        	this.price += 120;
+            //this.bill = Integer.toString(Integer.parseInt(this.bill) + 120);
         }
     }
 
     public void addTakeaway(){
         // your cod
-        this.bill = Integer.toString(Integer.parseInt(this.bill) + 20);
+    	this.price += 20;
+        //this.bill = Integer.toString(Integer.parseInt(this.bill) + 20);
 
     }
 
     public String getBill(){
         // your code goes here
+    	this.bill =  "" + this.price;
         return this.bill;
     }
 }
